@@ -31,6 +31,18 @@ def main():
     global i
     global j
     rectangles = Rectangle.rectanglesSpawn()
+    isTrue = True
+
+    while isTrue:
+        # keys_pressed = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                isTrue = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    isTrue = False
+            draw_display(rectangles=rectangles)
+
     
 
     while running:
