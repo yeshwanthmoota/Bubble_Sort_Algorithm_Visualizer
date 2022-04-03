@@ -31,3 +31,19 @@ class Rectangle:
                 j = -1 # putting it as -1 because the next statement "j += 1" increments it immediately
             j += 1
         return [i, j]
+    
+    @classmethod
+    def bubble_sort2(cls, i, j, rectangles):
+        if i < len(rectangles):
+            if j > 0:
+                if rectangles[j].height < rectangles[j-1].height:
+                    temp = rectangles[j]
+                    rectangles[j] = rectangles[j-1]
+                    rectangles[j-1] = temp
+            else:
+                i += 1
+                j = i + 1
+            j -= 1
+
+
+        return [i, j]
